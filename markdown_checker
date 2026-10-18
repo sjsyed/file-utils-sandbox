@@ -1,0 +1,24 @@
+def verify_project_documentation(files_list):
+    """
+    A direct text scanner that checks a list of files to ensure
+    essential documentation components exist in a project tree.
+    """
+    print("Scanning project tree for documentation files...")
+    
+    has_readme = False
+    
+    # Scanning text elements to detect documentation patterns
+    for filename in files_list:
+        if filename.lower() == "readme.md":
+            has_readme = True
+            break
+            
+    print("\n--- Compliance Audit Results ---")
+    if has_readme:
+        print("[PASS] Essential documentation (README.md) is present.")
+    else:
+        print("[WARN] Missing README.md file in the root directory.")
+
+if name == "main":
+    current_files = ["main.py", "styles.css", "README.md", "app.json"]
+    verify_project_documentation(current_files)
